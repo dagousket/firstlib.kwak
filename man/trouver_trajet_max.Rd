@@ -7,7 +7,7 @@
 trouver_trajet_max(trajet)
 }
 \arguments{
-\item{trajet}{}
+\item{trajet}{tibble. Données de trajets}
 }
 \value{
 tibble. Données de la paires jour-boucle avec le plus de trajets.

@@ -7,7 +7,7 @@
 calcul_distribution_semaine(trajet)
 }
 \arguments{
-\item{trajet}{}
+\item{trajet}{tibble. Données de trajets}
 }
 \value{
 tibble. Données de comptage.

@@ -46,7 +46,7 @@ compter_nombre_boucle <- function(trajet){
 
 #' Trouver la paire boucle-jour avec le plus de trajet
 #'
-#' @param trajet
+#' @param trajet tibble. Données de trajets
 #'
 #' @importFrom dplyr slice_max select filter pull
 #'
@@ -74,7 +74,7 @@ trouver_trajet_max <- function(trajet){
 
 #' Calcul du nombre de trajet par jour de la semaine
 #'
-#' @param trajet
+#' @param trajet tibble. Données de trajets
 #'
 #' @importFrom dplyr count
 #'
@@ -87,7 +87,7 @@ calcul_distribution_semaine <- function(trajet){
 
 #' Graph trjat par jour de la semaine
 #'
-#' @param trajet
+#' @param trajet tibble. Données de trajets
 #'
 #' @importFrom dplyr mutate
 #' @importFrom forcats fct_recode
