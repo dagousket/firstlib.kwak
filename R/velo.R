@@ -131,6 +131,8 @@ plot_distribution_semaine <- function(trajet) {
 #' @examples
 #' filtre_boucle(trajet = df_velo, boucle = c("880", "881"))
 filtre_boucle <- function(trajet, boucle){
+  stopifnot(is.character(boucle))
+
   trajet |>
     filter(
       `Numéro de boucle` %in% boucle
