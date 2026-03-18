@@ -4,10 +4,12 @@
 \alias{calcul_distribution_semaine}
 \title{Calcul du nombre de trajet par jour de la semaine}
 \usage{
-calcul_distribution_semaine(trajet)
+calcul_distribution_semaine(trajet, filtre = TRUE)
 }
 \arguments{
 \item{trajet}{tibble. Données de trajets}
+
+\item{filtre}{logical. Appliquer le filtre sur les anomalies}
 }
 \value{
 tibble. Données de comptage.
