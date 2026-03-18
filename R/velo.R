@@ -75,12 +75,18 @@ trouver_trajet_max <- function(trajet){
 #' Calcul du nombre de trajet par jour de la semaine
 #'
 #' @param trajet tibble. Données de trajets
+#' @param filtre logical. Appliquer le filtre sur les anomalies
 #'
 #' @importFrom dplyr count
 #'
 #' @returns tibble. Données de comptage.
 #' @export
-calcul_distribution_semaine <- function(trajet){
+calcul_distribution_semaine <- function(trajet, filtre = TRUE){
+  if(isTRUE(filtre)){
+    trajet <- trajet |>
+      filtre_anomalie()
+  }
+
   trajet |>
     count(`Jour de la semaine`, wt = Total, sort = TRUE, name = "trajets")
 }
@@ -97,7 +103,6 @@ calcul_distribution_semaine <- function(trajet){
 #' @export
 plot_distribution_semaine <- function(trajet) {
   trajet_weekday <- trajet |>
-    filtre_anomalie() |>
     calcul_distribution_semaine() |>
     mutate(
       jour = fct_recode(
