@@ -1,0 +1,30 @@
+---
+title: "graphique"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{graphique}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(firstlib.kwak)
+```
+
+On crée un graphique de distribution :
+
+```{r}
+df <- filtrer_trajet(df_velo, boucle = c("880", "881"))
+```
+
+```{r}
+plot_distribution_semaine(df)
+```
+
